@@ -1,3 +1,11 @@
+/* Grails GeoIP Web Application
+   @Author: Niall Curran
+   @Date: 25/11/2015
+*/
+
+
+
+//Calling IPLocate Pakcage to determine GeoIP
 package IPLocate
 
 
@@ -7,10 +15,11 @@ class GeoipController {
 	def index() {
 		
 	    String geoip = request.remoteAddr
-
+		
 		def location = geoIpService.getLocation(geoip)
+		
+		//Print location name
 			render location.countryName      
 	}
 }
-
 
